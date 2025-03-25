@@ -3,30 +3,35 @@ using UnityEngine;
 
 public class ProductSpawner : MonoBehaviour
 {
-    [SerializeField] private ConveyorMoving conveyor;
     [SerializeField] private List<GameObject> spawnbleProducts;
-    [SerializeField] private float productsDistance = 0.1f;
+    [SerializeField] private ConveyorMoving conveyor;
+    [SerializeField] private float productsDistance = 0.5f;
     [SerializeField] private Transform productParent;
 
-    private void Awake()
+    private bool isSpawning = false;
+
+    private void Update()
     {
-        SpawnProducts();
+        if (conveyor.IsConveyorMoving && !isSpawning)
+        {
+            isSpawning = true;
+            SpawnProducts();
+        }
     }
 
-    public void SpawnProducts()
+    private void SpawnProducts()
     {
-        GameObject randomProduct = GetRandomProduct();
-
-        GameObject newProduct = Instantiate(randomProduct, conveyor.startPos.transform.position, Quaternion.identity);
-
-        conveyor.spawnedProducts.Add(newProduct);
-
-        if (conveyor.spawnedProducts.Count < conveyor.MaxProductsCount)
+        if (conveyor.spawnedProducts.Count >= conveyor.MaxProductsCount)
         {
-            Invoke(nameof(SpawnProducts), productsDistance);
+            isSpawning = false;
+            return;
         }
 
+        GameObject randomProduct = GetRandomProduct();
+        GameObject newProduct = Instantiate(randomProduct, conveyor.startPos.transform.position, Quaternion.identity, productParent);
+        conveyor.spawnedProducts.Add(newProduct);
 
+        Invoke(nameof(SpawnProducts), productsDistance);
     }
 
     private GameObject GetRandomProduct()

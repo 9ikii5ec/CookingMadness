@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3336687675817257228}
   - component: {fileID: 4101329905630447182}
   - component: {fileID: -6513845801824477500}
+  - component: {fileID: 5026983265959067437}
   m_Layer: 0
   m_Name: cutlet
   m_TagString: Untagged
@@ -100,6 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185553638547e654bbb19d1485d01fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialAnimation: {fileID: 0}
+  mergedProductPrefab: {fileID: 0}
+  productType: cutlet
+  isDragging: 0
 --- !u!61 &-6513845801824477500
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,6 +150,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.68, y: 1.23}
   m_EdgeRadius: 0
+--- !u!114 &5026983265959067437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833052334550072952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f675f497da2b90469a57321b7f833ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCellTag: CutletSlot
+  placementRadius: 0.5
 --- !u!1 &1100386351452057013
 GameObject:
   m_ObjectHideFlags: 0

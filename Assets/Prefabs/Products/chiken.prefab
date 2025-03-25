@@ -183,9 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185553638547e654bbb19d1485d01fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDragging: 0
+  tutorialAnimation: {fileID: 0}
   mergedProductPrefab: {fileID: 9221583561715130652, guid: 8e0b963b499ad46479a5691fac6c84ad, type: 3}
-  productType: 
+  productType: chiken
+  isDragging: 0
 --- !u!61 &-4685430749624088583
 BoxCollider2D:
   m_ObjectHideFlags: 0

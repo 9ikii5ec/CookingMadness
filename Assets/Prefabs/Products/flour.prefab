@@ -100,9 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185553638547e654bbb19d1485d01fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDragging: 0
+  tutorialAnimation: {fileID: 0}
   mergedProductPrefab: {fileID: 8276080600417243533, guid: 04b95994a26535443b9431e79980f655, type: 3}
-  productType: 
+  productType: flour
+  isDragging: 0
 --- !u!61 &-4366352468612680961
 BoxCollider2D:
   m_ObjectHideFlags: 0

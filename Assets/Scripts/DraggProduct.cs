@@ -2,22 +2,27 @@ using UnityEngine;
 
 public class DraggProduct : MonoBehaviour
 {
-    [HideInInspector] public bool isDragging = false;
-    private Vector3 offset;
-    private Camera mainCamera;
-    private bool isMerged = false;
+    [SerializeField] private TutorialAnimation tutorialAnimation;
 
     public GameObject mergedProductPrefab;
     public string productType;
 
+    [HideInInspector] 
+    public bool isDragging = false;
+    private Vector3 offset;
+    private Camera mainCamera;
+    private bool isMerged = false;
+
     private void Start()
     {
-        productType = gameObject.name;
+        tutorialAnimation = FindAnyObjectByType<TutorialAnimation>();
         mainCamera = Camera.main;
     }
 
     private void Update()
     {
+        if (!tutorialAnimation.IsCanDragging) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             TryGrabObject();
@@ -87,6 +92,11 @@ public class DraggProduct : MonoBehaviour
 
         Vector3 mergePosition = (transform.position + otherProduct.transform.position) / 2;
         GameObject newProduct = Instantiate(mergedProductPrefab, mergePosition, Quaternion.identity);
+
+        SpriteRenderer newRenderer = newProduct.GetComponent<SpriteRenderer>();
+        SpriteRenderer currentRenderer = GetComponent<SpriteRenderer>();
+
+        newRenderer.sortingOrder = Mathf.Max(currentRenderer.sortingOrder, otherProduct.GetComponent<SpriteRenderer>().sortingOrder) + 1;     
 
         Destroy(otherProduct.gameObject);
         Destroy(gameObject);

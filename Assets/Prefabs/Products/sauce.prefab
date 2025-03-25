@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 808474779854747311}
   - component: {fileID: -4756203293019735625}
   - component: {fileID: -4121143673041421581}
+  - component: {fileID: -5777019664019071717}
   m_Layer: 0
   m_Name: sauce
   m_TagString: Untagged
@@ -184,6 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185553638547e654bbb19d1485d01fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialAnimation: {fileID: 0}
+  mergedProductPrefab: {fileID: 0}
+  productType: sauce
+  isDragging: 0
 --- !u!61 &-4121143673041421581
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -229,6 +234,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.73, y: 1.57}
   m_EdgeRadius: 0
+--- !u!114 &-5777019664019071717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4587334434092801625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f675f497da2b90469a57321b7f833ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCellTag: SauceSlot
+  placementRadius: 0.5
 --- !u!1 &5126657698836443427
 GameObject:
   m_ObjectHideFlags: 0

@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 8243039730710518862}
   - component: {fileID: -2216348799693152463}
   - component: {fileID: -6915150964723737907}
+  - component: {fileID: -582649462720334359}
   m_Layer: 0
   m_Name: bun
   m_TagString: Untagged
@@ -268,6 +269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185553638547e654bbb19d1485d01fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialAnimation: {fileID: 0}
+  mergedProductPrefab: {fileID: 0}
+  productType: bun
+  isDragging: 0
 --- !u!61 &-6915150964723737907
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -313,3 +318,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &-582649462720334359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276080600417243533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f675f497da2b90469a57321b7f833ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCellTag: BunSlot
+  placementRadius: 0.5

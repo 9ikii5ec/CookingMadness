@@ -183,9 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185553638547e654bbb19d1485d01fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDragging: 0
+  tutorialAnimation: {fileID: 0}
   mergedProductPrefab: {fileID: 5086303127161829097, guid: 75c1ccbfdebbc0c44b99142f701bb366, type: 3}
-  productType: 
+  productType: tomatoes
+  isDragging: 0
 --- !u!61 &-541563345634903315
 BoxCollider2D:
   m_ObjectHideFlags: 0
