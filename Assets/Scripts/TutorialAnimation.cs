@@ -20,6 +20,9 @@ public class TutorialAnimation : MonoBehaviour
     [SerializeField] private Transform nextTarget;
     [SerializeField] private float handMoveTime = 1.5f;
 
+    [Header("BackGrpund")]
+    public GameObject backGround;
+
     public bool IsCanDragging { get; private set; } = false;
     public bool IsCanOther { get; set; } = false;
     public bool IsHandFading { get; private set; } = false;
